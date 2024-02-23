@@ -1,2 +1,13 @@
-# React-Context-API
-Tarea 2 - Modulo 5 - Desafío Latam 2023 G52
+# React + Vite
+
+## Install
+
+```bash
+npm install
+```
+
+## Run
+
+```bash
+npm run dev
+```
