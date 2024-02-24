@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { Imagenes } from "../context/ContextProvider";
+
 const Gallery = () => {
-  return <div className="gallery grid-columns-5 p-3"></div>;
+
+
+  return (
+  
+  );
 };
 export default Gallery;
