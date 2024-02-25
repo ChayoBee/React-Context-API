@@ -1,4 +1,5 @@
 import Gallery from "../components/Gallery";
+import { ImagenContext } from "../context/ContextProvider";
 
 const Home = () => {
   return (
