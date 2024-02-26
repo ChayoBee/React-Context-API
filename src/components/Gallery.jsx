@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ImagenCard } from "./ImagenCard";
 import { ImagenContext } from "../context/ContextProvider";
 import IconHeart from "./IconHeart";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Gallery = () => {
   const { imagenes, setImagenes } = useContext(ImagenContext);
@@ -14,26 +15,25 @@ const Gallery = () => {
   };
 
   return (
-    <div className="container mt-4">
-    <div className="row row-cols-1 row-cols-md-4 g-4">
+    <Container fluid className="mt-4">
+    <Row xs={1} md={4} className="g-4">
         {imagenes.length ? (
           imagenes.map((imagen) => (
-            <div key={imagen.id} className="col mb-4">
-              <div className="card">
-                <img src={imagen.src.original} alt={imagen.alt}/>
-              <div className="card-body">
+            <Col key={imagen.id}>
+              
+                <img src={imagen.src.original} alt={imagen.alt} className="card-img-top"/>
+              
                 <button onClick={() => handleFav(imagen.id)} className="btn btn-outline-danger">
                   <IconHeart filled={imagen.favoritos}/>
                 </button>
-              </div>
-              </div>
-            </div>
+              
+            </Col>
           ))
         ) : (
           <h1>Cargando...</h1>
         )}
-    </div>
-    </div>
+    </Row>
+    </Container>
   );
 };
 export default Gallery;
