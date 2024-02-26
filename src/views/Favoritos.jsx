@@ -7,6 +7,13 @@ export const Favoritos = () => {
     const { imagenes } = useContext(ImagenContext);
     const ImgFiltradas = imagenes.filter((imagen) => imagen.favoritos === true);
 
+const handleFav = (id) => {
+  const newImg = imagenes.map((imagen) =>
+    imagen.id === id ? { ...imagen, favoritos: !imagen.favoritos } : imagen
+    );
+    setImagenes(newImg);
+};  
+
     return (
       <Container fluid className="mt-4">
         <h1>Fotos favoritas</h1>
@@ -19,6 +26,7 @@ export const Favoritos = () => {
                 url={imagen.src.original}
                 photographer={imagen.photographer}
                 filled={imagen.favoritos}
+                handleFav={handleFav}
                 className="card-img-top"/>
               </Col>
               ))
